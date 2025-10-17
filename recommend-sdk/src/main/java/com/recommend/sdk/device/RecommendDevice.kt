@@ -1,6 +1,7 @@
 package com.recommend.sdk.device
 
 import android.os.Build
+import android.util.Log
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
@@ -156,6 +157,7 @@ class RecommendDevice(
         activities: List<BaseActivity>,
         metrics: Metrics? = null
     ) {
+        Log.d("MESSAGE::: ", activities.toString())
         val activityRequests = mutableListOf<DeviceActivityRequest.ActivityRequest>()
         activities.forEach {
             recommend.getLogger().logDeviceActivity(it)
